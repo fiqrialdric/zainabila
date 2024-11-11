@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barakallah fii umrik, Bilaaa 😉</title>
+    <title>Barakallah fii umrik, Bilaa 😉</title>
     <style>
-        /* Mengatur tampilan body dengan GIF sebagai latar belakang penuh */
+        /* Mengatur tampilan body dengan satu latar belakang */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background: url('images/green.gif') no-repeat center center fixed; /* Ganti dengan nama file GIF Anda */
-            background-size: cover;
+            padding: 20px 0;
+            background: url('images/green.gif') no-repeat center center fixed; /* Gambar latar belakang */
+            background-size: cover; /* Menyesuaikan ukuran background */
             font-family: Arial, sans-serif;
             color: white;
-            overflow: hidden;
         }
 
         /* Overlay untuk efek gelap pada latar belakang */
@@ -26,7 +22,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.153); /* Sesuaikan transparansi sesuai keinginan */
+            background-color: rgba(0, 0, 0, 0.241);
             z-index: 1;
         }
 
@@ -34,11 +30,12 @@
         .container {
             position: relative;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             width: 100%;
             max-width: 800px;
             z-index: 2;
+            margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
@@ -48,7 +45,7 @@
         .video-container {
             width: 100%;
             max-width: 640px;
-            margin: 0 auto;
+            margin: 20px auto;
         }
 
         .video-container iframe {
@@ -64,37 +61,14 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
-        /* Animasi gambar bunga kiri-kanan */
-        .flower {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100px;
-            height: auto;
-            opacity: 0.7;
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .flower-left {
-            left: 10px;
-            animation-direction: alternate;
-        }
-
-        .flower-right {
-            right: 10px;
-            animation-direction: alternate-reverse;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-55%) translateX(10px); }
-            100% { transform: translateY(-50%) translateX(0); }
-        }
-
-        /* Responsif untuk judul */
+        /* Responsif untuk judul dan elemen lainnya */
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.5em;
+            }
+
+            .video-container iframe {
+                height: 300px; /* Mengurangi ukuran video pada layar lebih kecil */
             }
         }
 
@@ -102,22 +76,20 @@
             h1 {
                 font-size: 1.2em;
             }
+
+            .video-container iframe {
+                height: 250px; /* Menyesuaikan ukuran video untuk perangkat kecil */
+            }
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
-        <!-- Gambar bunga di sisi kiri -->
-        <!-- <img src="images/bunga.png" alt="Bunga Kiri" class="flower flower-left"> -->
-        
         <div class="video-container">
             <h1>Barakallah fii umrik, Bilaaa 😉</h1>
             <iframe src="https://drive.google.com/file/d/1tslIUsqEtRjPMZAzhbg9HIA7hcQYSkgp/preview" allow="autoplay"></iframe>
         </div>
-
-        <!-- Gambar bunga di sisi kanan -->
-        <!-- <img src="images/bunga.png" alt="Bunga Kanan" class="flower flower-right"> -->
     </div>
 </body>
 </html>
